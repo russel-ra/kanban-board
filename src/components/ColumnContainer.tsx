@@ -25,6 +25,7 @@ function ColumnContainer(props: Props) {
     const [editMode, setEditMode] = useState(false)
 
     const taskIds = useMemo(() => tasks.map(t => t.id), [tasks]);
+    const taskCount = useMemo(() => tasks.filter(t => t.columnId === column.id).length, [tasks]);
 
     const { setNodeRef, attributes, listeners, transform, transition, isDragging } = useSortable({
         id: column.id,
@@ -110,7 +111,7 @@ function ColumnContainer(props: Props) {
                     rounded-full
                     w-[30px]
                     ">
-                      0
+                      { taskCount }
                     </div>
 
                     { !editMode && column.title }
