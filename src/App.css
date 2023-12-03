@@ -5,7 +5,7 @@
 html,
 body,
 #root {
-  @apply bg-black text-white box-border;
+  @apply bg-gradient-to-b  text-white from-mainBackgroundColor via-rose-900 to-mainBackgroundColor;
 }
 
 ::-webkit-scrollbar {
